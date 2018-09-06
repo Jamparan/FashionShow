@@ -27,7 +27,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File file = new File("./src/LargeInput.in");
+        File file = new File("./src/SmallInput.txt");
 
         Scanner scan = null;
         try {
@@ -51,7 +51,7 @@ public class Main {
 
         BufferedWriter bufferedWriter = null;
         bufferedWriter = new BufferedWriter(new FileWriter(outputFilePath));
-        for (int j = 0; j < numberOfCases; j++) {
+        for (int j = 0; j <numberOfCases; j++) {
             fashionPoints = 0;
             modifications = 0;
             results = new ArrayList();
@@ -66,7 +66,7 @@ public class Main {
 
                 //}
             }
-            figures=new ArrayList(Arrays.asList("+"));
+            figures=new ArrayList(Arrays.asList("+","x"));
             if(gridSize>1){
                 for (int i = 0; i < gridSize; i++) {
                     //for (int k = 0; k < gridSize; k++) {
@@ -82,12 +82,12 @@ public class Main {
             }
 
             print(bufferedWriter, j);
-//            for (int i = 0; i < gridSize; i++) {
-//                for (int k = 0; k < gridSize; k++) {
-//                    System.out.print(grid[i][k] + " ");
-//                }
-//                System.out.println("");
-//            }
+          for (int i = 0; i < gridSize-1; i++) {
+              for (int k = 0; k < gridSize-1; k++) {
+                    System.out.print(grid[i][k] + " ");
+                }
+                System.out.println("");
+            }
         }
 
         bufferedWriter.close();
